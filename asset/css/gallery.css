@@ -1,0 +1,103 @@
+@font-face {
+	font-family: myFont;
+	src: url('../fonts/atwriter.ttf');
+}
+
+* {
+	margin: 0;
+	font-family: myFont;
+}
+
+a {
+	text-decoration: none;
+}
+
+header, footer {
+	background-color: #0f0f0f;
+}
+
+header {
+	height: 100px;
+	line-height: 100px;
+	white-space: nowrap;
+	margin-bottom: 5px;
+	padding-left: 30px;
+	font-size: 0.9em;
+}
+
+header h1 {
+	font-family: myFont;
+	font-size: 3em;
+}
+
+header a {
+	color: #ff033e;
+}
+
+.h1_1 {
+	color: #fff;
+}
+
+footer {
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	white-space: nowrap;
+	color: #fff;
+}
+
+.container {
+	padding: 30px;
+}
+
+nav a {
+	color: #ff033e;
+	line-height: 2em;
+	padding: 10px 20px;
+}
+
+nav a.active {
+	background-color: #0f0f0f;
+	color: #fff;
+}
+
+nav a:hover {
+	background-color: #0f0f0f;
+	color: #fff;
+}
+
+aside {
+	margin-bottom: 15px;
+}
+
+.gallery img {
+	width: 23%;
+	opacity: 1;
+	transition: all 1s;
+}
+
+.gallery img:hover {
+	background-color: #0f0f0f;
+	opacity: 0.5;
+	transition: all 1s;
+}
+
+@media screen and (max-width: 900px) {
+	.gallery img {
+		width: 49%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	footer {
+		font-size: 0.8em;
+	}
+
+	nav a {
+		font-size: 0.8em;
+	}
+
+	.gallery img {
+		width: 100%;
+	}
+}

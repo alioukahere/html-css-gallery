@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My Gallery</title>
+		<link rel="stylesheet" type="text/css" href="asset/css/gallery.css">
+		<!-- fancybox -->
+		<link rel="stylesheet" type="text/css" href="asset/css/jquery.fancybox.css">
+		<link rel="stylesheet" type="text/css" href="asset/css/jquery.fancybox-buttons.css">
+		<link rel="stylesheet" type="text/css" href="asset/css/jquery.fancybox-thumbs.css">
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<header>
+			<h1><a href="#"><span class="h1_1">My</span>Gallery</a></h1>
+		</header>
+
+		<div class="container">
+			<aside>
+				<nav>
+					<a href="javascript:;" data-rel="all" class="filter active">View All</a>
+					<a href="javascript:;" data-rel="category1" class="filter">Category 1</a>
+					<a href="javascript:;" data-rel="category2" class="filter">Category 2</a>
+				</nav>
+			</aside>
+
+			<section>
+				<div class="gallery">
+					<a href="asset/img/img0.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category1"><img src="asset/img/img0.jpg"></a>
+					<a href="asset/img/img1.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category2"><img src="asset/img/img1.jpg"></a>
+					<a href="asset/img/img2.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category1"><img src="asset/img/img2.jpg"></a>
+					<a href="asset/img/img3.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category1"><img src="asset/img/img3.jpg"></a>
+					<a href="asset/img/img4.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category2"><img src="asset/img/img4.jpg"></a>
+					<a href="asset/img/img5.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category2"><img src="asset/img/img5.jpg"></a>
+					<a href="asset/img/img6.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category1"><img src="asset/img/img6.jpg"></a>
+					<a href="asset/img/img7.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category2"><img src="asset/img/img7.jpg"></a>
+					<a href="asset/img/img8.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category1"><img src="asset/img/img8.jpg"></a>
+					<a href="asset/img/img9.jpg" class="fancybox" data-fancybox-group="gallery" data-filter="category1"><img src="asset/img/img9.jpg"></a>
+				</div>
+			</section>
+		</div>
+
+		<footer>
+			<div>
+				<p>Copyright &copy; 2016. All Right Reserved By Alioukahere.</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="asset/js/jquery.js"></script>
+		<script type="text/javascript" src="asset/js/jquery.fancybox.js"></script>
+		<script type="text/javascript" src="asset/js/jquery.fancybox-pack.js"></script>
+		<script type="text/javascript" src="asset/js/jquery.fancybox-buttons.js"></script>
+		<script type="text/javascript" src="asset/js/jquery.fancybox-media.js"></script>
+		<script type="text/javascript" src="asset/js/jquery.fancybox-thumbs.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.fancybox').fancybox({
+					helpers:{
+						buttons:{}
+					}
+				});
+
+				$('.filter').on('click', function() {
+					var $this = $(this);
+
+					if(!$this.hasClass('active')) { // If the link isn't active
+						$('.filter').removeClass('active'); // Remove active class from all the filter class link
+						$this.addClass('active'); // Add class active to the clicked class
+
+						// Getting the data-ret attribute
+						var $filter = $this.data('rel');
+
+						$filter == 'all' ? 
+						$('.fancybox').attr('data-fancybox-group', 'gallery').not(':visible').fadeIn()
+						: // else
+						$('.fancybox').fadeOut(0).filter(function() {
+							return $(this).data('filter') == $filter;
+						}).attr('data-fancybox-group', $filter).fadeIn(1000);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
