@@ -8,6 +8,10 @@
 	font-family: myFont;
 }
 
+html, body {
+	height: 100%;
+}
+
 a {
 	text-decoration: none;
 }
@@ -38,16 +42,20 @@ header a {
 	color: #fff;
 }
 
+.container {
+	padding: 30px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -2em;
+}
+
 footer {
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
 	white-space: nowrap;
 	color: #fff;
-}
-
-.container {
-	padding: 30px;
 }
 
 nav a {
